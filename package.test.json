@@ -7,6 +7,9 @@
     "node": ">=8"
   },
   "scripts": {
+    "start": "npm run build && node build/index.js",
+    "start-dev": "nodemon --watch src --exec PORT=5000 npm start",
+    "prestart-dev": "npm run lint-fix",
     "test": "mocha",
     "build": "babel src -d build",
     "build-clean": "rm -rf build",
